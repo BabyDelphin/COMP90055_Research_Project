@@ -27,19 +27,47 @@ def find_file(name="model.h5"):
     return model
 
 
-def splitSet(target, splitRate=1):
+def read_log(name = "log.txt"):
+    file = open("log/"+name, "r")
+    lines = file.readlines()
+    latest_log = lines[-1]
+    last_num = latest_log.split(" ")[1].split("\\")[0]
+    new_first = int(last_num) + 1
+    new_last = new_first + 49
+    file.close()
+
+    return new_first, new_last
+
+
+def write_log(name = "log.txt", first = 1, last = 50):
+    file = open("log/" + name, "a")
+    output = str(first) + " " + str(last) + "\n"
+    file.write(output)
+    file.close()
+
+
+def splitSet(target, splitRate=1, logName = "log.txt"):
     videoNumber = {
-        "raw": 20,
-        "Deepfakes": 20,
+        "raw": 50,
+        "Deepfakes": 50,
     }
+    if os.path.exists("log/" + logName):
+        first, last = read_log(logName)
+    else:
+        first = 1
+        last = videoNumber[target]
+
     trainLength = round(videoNumber[target] * splitRate)
     validateLength = videoNumber[target] - trainLength
-    uList = list(range(1, videoNumber[target] + 1))
+    # uList = list(range(1, videoNumber[target] + 1))
+    uList = list(range(first, last + 1))
     vSet = random.sample(uList, validateLength)
     tSet = []
     for i in uList:
         if i not in vSet:
             tSet.append(i)
+    write_log(logName, first, last)
+
     return {"name": target, "vSet": vSet, "tSet": tSet, "Num": videoNumber[target]}
 
 
