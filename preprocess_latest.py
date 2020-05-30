@@ -89,14 +89,17 @@ if __name__ == '__main__':
     folder = arguments[2]
     already_videoes = sorted(os.listdir("picture/fake/" + folder))
     # print(already_videoes)
-    last_picture = already_videoes[-1]
-    lastvideo = last_picture.split('-')[0]
+    if len(already_videoes) == 0:
+        lastvideo = 1
+    else:
+        last_picture = already_videoes[-1]
+        lastvideo = last_picture.split('-')[0]
     # print(lastvideo)
 
     # executue according to the type
     if (type == "raw"):
         # operate the raw video into faces
-        all_video = os.listdir("download/original_sequences/" + folder + "/c23/videos")
+        all_video = sorted(os.listdir("download/original_sequences/" + folder + "/c23/videos"))
         video = [i for i in all_video if is_video(i)]
         video_num = 1
         outputFolder = "raw/" + folder
