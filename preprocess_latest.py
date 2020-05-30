@@ -109,7 +109,7 @@ if __name__ == '__main__':
 
     if (type == "fake"):
         # operate the fake video into faces
-        all_video = os.listdir("download/manipulated_sequences/" + folder + "/c23/videos")
+        all_video = sorted(os.listdir("download/manipulated_sequences/" + folder + "/c23/videos"))
         video = [i for i in all_video if is_video(i)]
         video_num = 1
         outputFolder = "fake/" + folder
