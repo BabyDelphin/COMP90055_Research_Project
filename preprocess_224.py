@@ -97,6 +97,8 @@ if __name__ == '__main__':
             last_picture = already_videoes[-1]
             lastvideo = last_picture.split('-')[0]
         # print(lastvideo)
+    else:
+        lastvideo = 1
 
     # executue according to the type
     if (type == "raw"):
