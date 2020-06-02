@@ -87,7 +87,7 @@ if __name__ == '__main__':
     arguments = sys.argv
     type = arguments[1]
     folder = arguments[2]
-    directory = "picture_224/fake/" + folder
+    directory = "picture_224/" + type + "/" + folder
     if os.path.exists(directory):
         already_videoes = sorted(os.listdir(directory))
         # print(already_videoes)
