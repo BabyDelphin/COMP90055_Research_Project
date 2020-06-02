@@ -108,6 +108,9 @@ if __name__ == '__main__':
         video_num = 1
         outputFolder = "raw/" + folder
         for i in range(len(video)):
+            if (video_num < int(lastvideo)):
+                video_num += 1
+                continue
             video_path = "download/original_sequences/" + folder + "/c23/videos/" + video[i]
             print(video_path)
             # frame_folder = "real_frame"
