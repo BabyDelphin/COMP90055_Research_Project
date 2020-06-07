@@ -38,7 +38,7 @@ choose to split the dataset by video instead of by pictures. The average length 
 are different from each  other. As a result,  when the video number of the training  set :
 the video number of the testing set is 80%:20%,  the ratio of picture numbers is  slightly
 different.  
-![split_dataset]()
+![split_dataset]()  
 Instead of presenting only an accuracy  for  the  binary  classification,  the  evaluation
 matrices are based on true positive rate and  true  negative  rate  of  the  lassification
 result. The  definition of each classification  concept is  presented in  the table below.
@@ -54,7 +54,7 @@ standard of predicting if a video is fake or not. For example, a video produces 
 and Deepfakes’ threshold is that if over 50%  of images  are  predicted  as  fake, then the
 output  from  Deepfakes’  model is Fake. If any of  four models’  output is Fake, then this
 video is Fake.  
-![voting_1]()
+![voting_1]()  
 ![voting_2]()
 
 
