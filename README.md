@@ -26,7 +26,7 @@ https://github.com/ondyari/FaceForensics
 Based on  the  selected  data  set,  the pre-processing module consists  of  three  steps:
 intercepting  frames  from video,  detecting faces from pictures, and saving face areas as
 new pictures.  
-![preprocess_flowchart]()
+![preprocess_flowchart](https://github.com/BabyDelphin/COMP90055_COMP90055_Research_Project/blob/master/images/preprocess_flowchart.png)
 
 ### Training and Evaluating
 In consideration that pictures from the same video may have some internal  similarity,  we
@@ -38,13 +38,13 @@ choose to split the dataset by video instead of by pictures. The average length 
 are different from each  other. As a result,  when the video number of the training  set :
 the video number of the testing set is 80%:20%,  the ratio of picture numbers is  slightly
 different.  
-![split_dataset]()  
+![split_dataset](https://github.com/BabyDelphin/COMP90055_COMP90055_Research_Project/blob/master/images/split_dataset.png)  
 Instead of presenting only an accuracy  for  the  binary  classification,  the  evaluation
 matrices are based on true positive rate and  true  negative  rate  of  the  lassification
 result. The  definition of each classification  concept is  presented in  the table below.
 The real video detection accuracy and fake video detection accuracy and overall  detection
 accuracy can be computed with the following equations respectively.  
-![evaluation]()
+![evaluation](https://github.com/BabyDelphin/COMP90055_COMP90055_Research_Project/blob/master/images/Evaluation.png)
 
 ### Voting Mechanism
 The trained model certainly is ready for image detection, but still a voting mechanism away
@@ -54,8 +54,8 @@ standard of predicting if a video is fake or not. For example, a video produces 
 and Deepfakes’ threshold is that if over 50%  of images  are  predicted  as  fake, then the
 output  from  Deepfakes’  model is Fake. If any of  four models’  output is Fake, then this
 video is Fake.  
-![voting_1]()  
-![voting_2]()
+![voting_1](https://github.com/BabyDelphin/COMP90055_COMP90055_Research_Project/blob/master/images/voting_1.png)  
+![voting_2](https://github.com/BabyDelphin/COMP90055_COMP90055_Research_Project/blob/master/images/voting_2.png)
 
 
 
