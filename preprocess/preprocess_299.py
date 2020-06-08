@@ -1,4 +1,8 @@
 # Data preprocess - Neal
+# this file is used to preprocess the input video: extract frame from the
+# video, search faces from the frame and save the faces into pictures.
+# the picture size is 299
+
 import os
 from os.path import join
 import subprocess
