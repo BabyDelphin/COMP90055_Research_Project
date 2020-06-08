@@ -8,8 +8,9 @@ from PIL import Image
 from tensorflow import keras
 
 """This python script will create a generator to read the data."""
-"""Then we will start training."""
+"""Then we will start training on ."""
 """We will train one epoch each time and save the model."""
+"""Model used: Xception"""
 
 
 
