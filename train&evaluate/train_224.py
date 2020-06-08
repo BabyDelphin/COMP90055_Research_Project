@@ -10,7 +10,7 @@ from tensorflow import keras
 """This python script will create a generator to read the data."""
 """Then we will start training."""
 """We will train one epoch each time and save the model."""
-
+"""Model used: MobileNet"""
 
 
 trainDataSet = []
