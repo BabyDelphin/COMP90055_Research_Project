@@ -47,7 +47,13 @@ def main(args):
         print(modelName)
         fakeCount = 0
         rawCount = 0
-        model = keras.models.load_model("models/" + modelName+ '/epoch' + str(10) + '.h5')
+        if args.model == 'Xception':
+            model = keras.models.load_model("models/" + modelName+ '/epoch' + str(10) + '.h5')
+        elif  args.model == 'MobileNets':
+            model = keras.models.load_model("models_224/" + modelName+ '/epoch' + str(10) + '.h5')
+        else:
+            print("Wrong Model.")
+            return
         result = model.predict(data)
         for i in result:
             prediction = np.argmax(i)
